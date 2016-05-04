@@ -10,7 +10,7 @@ export default class DetailsKarmienie extends React.Component {
 	
 		return (
 			<div>
-				Work {this.props.params.animalId}
+				Animal.id {this.props.params.animalId}
 			</div>
 		);
 	}

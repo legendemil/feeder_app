@@ -29,6 +29,20 @@ a:hover {
   line-height: 2em;
   border-bottom: 1px solid #000;
 }
+#karmienie #karmienie-header .add-btn {
+  font-size: 10px;
+  line-height: 15px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 10px -4px #000;
+  padding: 5px;
+  float: right;
+}
+#karmienie #karmienie-header .add-btn i {
+  margin-left: 5px;
+  line-height: 15px;
+}
 #karmienie #animal-list {
   list-style-position: inside;
 }

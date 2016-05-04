@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import HeaderKarmienie
-import HeaderKarmienie from './karmienie/header.component';
+import HeaderKarmienie from './karmienie/headerKarmienie.component';
 
 // import AnimalList
 import AnimalList from './karmienie/animalList.component';
