@@ -8,7 +8,7 @@ export default class MenuBtn extends React.Component {
 
 	render(){
 		return (
-			<li><Link to={this.props.name}>{this.props.name}</Link></li>
+			<li><Link to={'/' + this.props.name}>{this.props.name}</Link></li>
 		);
 	}
 }

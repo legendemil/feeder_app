@@ -15,7 +15,8 @@ export default class AppContainer extends React.Component {
 		return (
 			<div className='container-fluid'>
 					<Sidebar />
-					<MainArea />
+					<MainArea children={this.props.children}/>
+					
 			</div>
 		);
 	}

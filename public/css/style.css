@@ -16,6 +16,12 @@
 #sidebar #logo {
   padding: 10px;
 }
+#sidebar #logo h2 > a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
 #sidebar #menu-sidebar {
   background-color: #e9ece5;
   padding: 0px;
