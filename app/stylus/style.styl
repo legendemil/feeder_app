@@ -1,6 +1,6 @@
 // colors
-dark = #89bdd3
-light = #fff
+dark-blue = #89bdd3
+light = #e3e3e3
 blue = #9ad3de
 
 
@@ -17,14 +17,14 @@ a, a:hover
 	#header
 		text-align right
 		background linear-gradient(to right, #E0EAFC , #CFDEF3)
-		padding 5px
+		padding 19px
 		color #fff
 		
 
 .main-area-content
 	padding 20px
 	padding-left 50px
-	background-color light
+	background-color #fff
 	
 #home
 	h4
@@ -48,19 +48,22 @@ a, a:hover
 
 #sidebar
 	text-align center
-	background-color dark
 	color #fff
 	padding 0px
+	box-shadow 2px 0px 30px -10px  black
+	z-index 1000
+	@media screen and (min-width: 757px)
+		height 100vh
 	#logo
 		background linear-gradient(to left, #E0EAFC , #CFDEF3)
-		padding 10px
+		line-height 100%
 		h2 > a 
 			display block
 			text-decoration none
 			color #fff
 			cursor pointer
 	#menu-sidebar
-		background-color light
+		background-color #fff
 		padding 0px
 		> ul
 			list-style-type none
@@ -68,7 +71,7 @@ a, a:hover
 			li 
 				cursor pointer
 				a 
-					color dark 
+					color dark-blue 
 					text-decoration none
 					display block
 					width 100%
