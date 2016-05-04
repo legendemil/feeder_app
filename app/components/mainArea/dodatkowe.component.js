@@ -8,7 +8,7 @@ export default class Dodatkowe extends React.Component {
 
 	render(){
 		return (
-			<div className='col-md-12' id='dodatkowe'>
+			<div className='col-md-12 main-area-content' id='dodatkowe'>
 				Dodatkowe
 			</div>
 		);

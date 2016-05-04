@@ -6,6 +6,8 @@ import Header from './mainArea/header.component';
 // import Home component
 import Home from './mainArea/home.component';
 
+
+
 export default class MainArea extends React.Component {
 	constructor(){
 		super();
@@ -13,10 +15,9 @@ export default class MainArea extends React.Component {
 
 	render(){
 		return (
-			<div className='col-md-10' id='main-area'>
+			<div className='col-md-10 col-sm-9' id='main-area'>
 				<div className="row">
 					<Header />
-					main area
 					{this.props.children}
 				</div>
 			</div>

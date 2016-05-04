@@ -8,7 +8,7 @@ export default class Linienie extends React.Component {
 
 	render(){
 		return (
-			<div className='col-md-12' id='linienie'>
+			<div className='col-md-12 main-area-content' id='linienie'>
 				Linienie
 			</div>
 		);

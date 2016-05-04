@@ -6,6 +6,7 @@ import Sidebar from '../components/sidebar.component';
 // import mainArea
 import MainArea from '../components/mainArea.component';
 
+
 export default class AppContainer extends React.Component {
 	constructor(){
 		super();

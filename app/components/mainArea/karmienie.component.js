@@ -8,7 +8,7 @@ export default class Karmienie extends React.Component {
 
 	render(){
 		return (
-			<div className='col-md-12' id='karmienie'>
+			<div className='col-md-12 main-area-content' id='karmienie'>
 				Karmienie
 			</div>
 		);

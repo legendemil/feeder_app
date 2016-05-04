@@ -3,17 +3,31 @@
 }
 #main-area #header {
   text-align: right;
-  background-color: #3b3a36;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
   padding: 5px;
   color: #fff;
 }
+.main-area-content {
+  padding: 20px;
+  padding-left: 50px;
+  background-color: #fff;
+}
+#home h4 {
+  line-height: 2em;
+}
+#home img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
 #sidebar {
   text-align: center;
-  background-color: #3b3a36;
+  background-color: #89bdd3;
   color: #fff;
   padding: 0px;
 }
 #sidebar #logo {
+  background: linear-gradient(to left, #e0eafc, #cfdef3);
   padding: 10px;
 }
 #sidebar #logo h2 > a {
@@ -23,7 +37,7 @@
   cursor: pointer;
 }
 #sidebar #menu-sidebar {
-  background-color: #e9ece5;
+  background-color: #fff;
   padding: 0px;
 }
 #sidebar #menu-sidebar > ul {
@@ -34,7 +48,7 @@
   cursor: pointer;
 }
 #sidebar #menu-sidebar > ul li a {
-  color: #3b3a36;
+  color: #89bdd3;
   text-decoration: none;
   display: block;
   width: 100%;
@@ -42,6 +56,6 @@
   font-size: 1.2em;
 }
 #sidebar #menu-sidebar > ul li a:hover {
-  background-color: #b3c2bf;
+  background-color: #9ad3de;
   color: #fff;
 }
