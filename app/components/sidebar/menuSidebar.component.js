@@ -10,7 +10,7 @@ export default class MenuSidebar extends React.Component {
 
 	render(){
 		
-		const list = [ "Karmienie", "Inkubacja jaj", "Linienie", "Dodatkowe"].map((name, i) => <MenuBtn key={i} name={name} /> );
+		const list = [ "Karmienie", "Inkubacja jaj", "Linienie", "Dodatkowe"].map((name, i) => <MenuBtn key={i} name={name} link={name}/> );
 
 		return (
 			<div className='col-md-12' id='menu-sidebar'>
