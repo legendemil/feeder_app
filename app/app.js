@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// import AppConatiner
+import AppConatiner from './containers/app.container';
 
 export default class Layout extends React.Component {
 	constructor(){
@@ -10,7 +12,7 @@ export default class Layout extends React.Component {
 	render(){
 		return (
 			<div>
-				Work
+				<AppConatiner />
 			</div>
 		);
 	}

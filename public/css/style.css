@@ -1,0 +1,30 @@
+.container-fluid {
+  padding: 0px !important;
+}
+#sidebar {
+  text-align: center;
+  background-color: #3b3a36;
+  color: #fff;
+  padding: 0px;
+}
+#sidebar #logo {
+  padding: 10px;
+}
+#sidebar #menu-sidebar {
+  color: #3b3a36;
+  background-color: #e9ece5;
+  padding: 0px;
+}
+#sidebar #menu-sidebar > ul {
+  list-style-type: none;
+  padding: 0px;
+}
+#sidebar #menu-sidebar > ul li {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.2em;
+}
+#sidebar #menu-sidebar > ul li:hover {
+  background-color: #b3c2bf;
+  color: #fff;
+}
