@@ -22,6 +22,9 @@ import Linienie from './components/mainArea/linienie.component';
 // import Dodatkowe Component
 import Dodatkowe from './components/mainArea/dodatkowe.component';
 
+// import DetailsKarmienie
+import DetailsKarmienie from './components/mainArea/karmienie/detailsKarmienie.component';
+
 
 export default class Layout extends React.Component {
 	constructor(){
@@ -42,7 +45,10 @@ ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={AppContainer} >
 			<IndexRoute component={Home} />
-			<Route path="Karmienie" component={Karmienie}/>
+			
+			<Route path="Karmienie" component={Karmienie} />
+			<Route path="/Karmienie/:animalId" component={DetailsKarmienie}/>
+
 			<Route path="Inkubacja" component={Inkubacja}/>
 			<Route path="Linienie" component={Linienie}/>
 			<Route path="Dodatkowe" component={Dodatkowe}/>
