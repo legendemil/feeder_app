@@ -26,12 +26,14 @@ import Dodatkowe from './components/mainArea/dodatkowe.component';
 import DetailsKarmienie from './components/mainArea/karmienie/detailsKarmienie.component';
 
 
+
 export default class Layout extends React.Component {
 	constructor(){
 		super();
 	}
 
 	render(){
+		
 		return (
 			<div>
 				<AppContainer />
