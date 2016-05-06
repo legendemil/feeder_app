@@ -1,7 +1,11 @@
 // colors
 dark-blue = #89bdd3
-light = #e3e3e3
+light = #ECF0F1
 blue = #9ad3de
+
+
+body
+	background-color #fff
 
 
 a, a:hover
@@ -14,6 +18,9 @@ a, a:hover
 
 
 #main-area
+	position absolute
+	top 0px
+	right 0px
 	#header
 		text-align right
 		background linear-gradient(to right, #E0EAFC , #CFDEF3)
@@ -33,30 +40,37 @@ a, a:hover
 		width 150px
 		height 150px
 		margin 10px
+
+
+
+.action-btn
+	font-size 10px 
+	line-height 15px
+	background-color #fff
+	border none
+	outline none
+	box-shadow 2px 2px 10px -4px black
+	padding 5px
+	float right
+	i 
+		margin-left 5px
+		line-height @line-height
+
 		
 
 #karmienie
 	#karmienie-header
 		line-height 2em
-		border-bottom 1px solid black
-		.add-btn
-			font-size 10px 
-			line-height 15px
-			background-color #fff
-			border none
-			outline none
-			box-shadow 2px 2px 10px -4px black
-			padding 5px
-			float right
-			i 
-				margin-left 5px
-				line-height @line-height
+		border-bottom 1px solid light
 	#animal-list
 		list-style-position inside
 		.animal-list-item
+			margin 5px
 			padding 5px
 			font-size 20px
-	
+			&:nth-child(even)
+				border-top 1px solid light
+				border-bottom 1px solid light
 
 #sidebar
 	text-align center
@@ -65,6 +79,9 @@ a, a:hover
 	box-shadow 2px 0px 30px -10px  black
 	z-index 1000
 	@media screen and (min-width: 757px)
+		position fixed
+		top 0 
+		left 0
 		height 100vh
 	#logo
 		background linear-gradient(to left, #E0EAFC , #CFDEF3)

@@ -1,3 +1,6 @@
+body {
+  background-color: #fff;
+}
 a,
 a:hover {
   text-decoration: none;
@@ -5,6 +8,11 @@ a:hover {
 }
 .container-fluid {
   padding: 0px !important;
+}
+#main-area {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 #main-area #header {
   text-align: right;
@@ -25,11 +33,7 @@ a:hover {
   height: 150px;
   margin: 10px;
 }
-#karmienie #karmienie-header {
-  line-height: 2em;
-  border-bottom: 1px solid #000;
-}
-#karmienie #karmienie-header .add-btn {
+.action-btn {
   font-size: 10px;
   line-height: 15px;
   background-color: #fff;
@@ -39,16 +43,25 @@ a:hover {
   padding: 5px;
   float: right;
 }
-#karmienie #karmienie-header .add-btn i {
+.action-btn i {
   margin-left: 5px;
   line-height: 15px;
+}
+#karmienie #karmienie-header {
+  line-height: 2em;
+  border-bottom: 1px solid #ecf0f1;
 }
 #karmienie #animal-list {
   list-style-position: inside;
 }
 #karmienie #animal-list .animal-list-item {
+  margin: 5px;
   padding: 5px;
   font-size: 20px;
+}
+#karmienie #animal-list .animal-list-item:nth-child(even) {
+  border-top: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
 }
 #sidebar {
   text-align: center;
@@ -59,6 +72,9 @@ a:hover {
 }
 @media screen and (min-width: 757px) {
   #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
   }
 }

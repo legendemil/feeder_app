@@ -24,11 +24,21 @@ class AnimalStore extends EventEmitter {
 
 	}
 
+	// delete aniaml from db
+	deleteAnimal(){
+
+	}
+
 	handleActions(action) {
 		console.log("Type: ", action.type);
 		switch(action.type) {
+
 			case 'CREATE_ANIMAL':
 				this.createAnimal(action.data);
+				break;
+
+			case 'DELETE_ANIMAL':
+				this.deleteAnimal(action._id);
 				break;
 		}
 	}

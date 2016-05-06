@@ -42,8 +42,8 @@ function getAnimals(){
 
 
 // delete an animal
-function deleteAnimal(todo){
-	this.db.remove(todo);
+function deleteAnimal(_id){
+	this.db.remove(_id);
 }
 
 
