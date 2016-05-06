@@ -20,8 +20,12 @@ export default class Karmienie extends React.Component {
 		}
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		AnimalStore.on("change", this.getAnimals.bind(this));
+	}
+
+	componentWillUnMount(){
+		AnimalStore.removeListener("change", this.getAnimals.bind(this));
 	}
 	
 	// get Animals from AnimalsStore
@@ -35,16 +39,13 @@ export default class Karmienie extends React.Component {
 		});
 	}
 
-	// create animal
-	createAnimal(animal) {
-		AnimalActions.createAnimal({name: 'Patyczak', type: 'Imago', user_id: 1});
-	}
+	
 
 	render(){
 		console.log('data', this.state.animals);
 		return (
 			<div className='col-md-12 main-area-content' id='karmienie'>
-				<HeaderKarmienie createAnimal={this.createAnimal.bind(this)}/>
+				<HeaderKarmienie/>
 				<AnimalList animals={this.state.animals || []}/>
 			</div>
 		);

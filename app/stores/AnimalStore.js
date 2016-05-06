@@ -20,9 +20,7 @@ class AnimalStore extends EventEmitter {
 	// create animal in a db
 	createAnimal(data){
 		let _this = this;
-		AnimalsDB.addAnimal(data.name, data.type, data.user_id).then(function () {
-			_this.emit("change");
-		});
+		AnimalsDB.addAnimal(data.name, data.type, data.user_id);
 
 	}
 

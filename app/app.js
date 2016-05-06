@@ -25,11 +25,14 @@ import Dodatkowe from './components/mainArea/dodatkowe.component';
 // import DetailsKarmienie
 import DetailsKarmienie from './components/mainArea/karmienie/detailsKarmienie.component';
 
+// import AddAnimalForm
+import AddAnimalForm from './components/mainArea/animal/addAnimalForm.component';
 
 
 export default class Layout extends React.Component {
 	constructor(){
 		super();
+		sessionStorage.setItem('user_id', 1);
 	}
 
 	render(){
@@ -50,6 +53,8 @@ ReactDOM.render(
 			
 			<Route path="Karmienie" component={Karmienie} />
 			<Route path="/Karmienie/:animalId" component={DetailsKarmienie}/>
+
+			<Route path='animal/add' component={AddAnimalForm}/>
 
 			<Route path="Inkubacja" component={Inkubacja}/>
 			<Route path="Linienie" component={Linienie}/>

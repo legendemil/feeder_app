@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 
 export default class AddBtn extends React.Component {
 	constructor(){
@@ -8,7 +8,7 @@ export default class AddBtn extends React.Component {
 
 	render(){
 		return (
-			<button className="add-btn" onClick={this.props.createAnimal}>{this.props.title}<i className="fa fa-plus" aria-hidden="true"></i></button>
+			<button className="add-btn"><Link to={'/animal/add'}>{this.props.title}<i className="fa fa-plus" aria-hidden="true"></i></Link></button>
 		);
 	}
 }
