@@ -63,6 +63,37 @@ a:hover {
   border-top: 1px solid #ecf0f1;
   border-bottom: 1px solid #ecf0f1;
 }
+#add-animal-box {
+  padding: 20px;
+}
+#add-animal-box h1 {
+  line-height: 2em;
+  border-bottom: 1px solid #ecf0f1;
+}
+#add-animal-box div {
+  padding: 10px;
+  margin-top: 10px;
+}
+#add-animal-box div label {
+  font-size: 17px;
+  width: 150px;
+}
+#add-animal-box div input[type="text"] {
+  outline: none;
+  border: none;
+  box-shadow: 5px 5px 10px -7px #000;
+  font-size: 17px;
+  padding: 5px;
+  transition-duration: 0.3s;
+}
+#add-animal-box div input[type='submit'] {
+  padding: 10px;
+  box-shadow: 2px 2px 15px -8px #000;
+  font-size: 1.3em;
+  background-color: #fff;
+  border: none;
+  letter-spacing: 3px;
+}
 #sidebar {
   text-align: center;
   color: #fff;

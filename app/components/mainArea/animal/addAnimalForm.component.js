@@ -32,17 +32,17 @@ export default class AddAnimalForm extends React.Component {
 
 	render(){
 		return (
-			<div>
+			<div id='add-animal-box' className='col-md-12'>
 				<h1>Dodaj nowego zwierzaka</h1>
 				<form onSubmit={this.createAnimal.bind(this)}>
 					
 					<div>
-						<label htmlFor="name"><h2>Nazwa:</h2></label>
+						<label htmlFor="name">Nazwa</label>
 						<input type="text" id="name" name="name" required/>
 					</div>
 					
 					<div>
-						<label htmlFor="type"><h2>Typ:</h2></label>
+						<label htmlFor="type">Typ</label>
 						<input type="text" id="type" name="type" required/>
 					</div>
 					
