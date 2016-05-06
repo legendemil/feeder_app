@@ -9,7 +9,7 @@ export default class HeaderKarmienie extends React.Component {
 	render(){
 		return (
 			<h1 id='karmienie-header'>
-			Twoje Zwierzęta <AddBtn title={"Dodaj nowe zwierzę"} />
+			Twoje Zwierzęta <AddBtn title={"Dodaj nowe zwierzę"} createAnimal={this.props.createAnimal}/>
 			</h1>
 		);
 	}

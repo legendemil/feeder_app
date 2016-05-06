@@ -8,7 +8,7 @@ export default class AddBtn extends React.Component {
 
 	render(){
 		return (
-			<button className="add-btn">{this.props.title}<i className="fa fa-plus" aria-hidden="true"></i></button>
+			<button className="add-btn" onClick={this.props.createAnimal}>{this.props.title}<i className="fa fa-plus" aria-hidden="true"></i></button>
 		);
 	}
 }

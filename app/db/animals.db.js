@@ -28,22 +28,18 @@ function addAnimal(name, type, id_user) {
 		id_user: 1
 	};
 
-	this.db.put(animal, function callback(err, result) {
-		if(!err)
-			console.log("Succesfully add a animal");
-	});
+	return this.db.put(animal);
 }
 
 // get animals
+
 function getAnimals(){
-	this.db.allDocs({
+	return this.db.allDocs({
 		include_docs: true,
 		descending: true
-	}, function (err, doc) {
-		if(!err)
-			console.log(doc.rows);
 	});
 }
+
 
 // delete an animal
 function deleteAnimal(todo){
