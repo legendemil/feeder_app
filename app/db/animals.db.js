@@ -42,8 +42,8 @@ function getAnimals(){
 
 
 // delete an animal
-function deleteAnimal(_id){
-	this.db.remove(_id);
+function deleteAnimal(doc){
+	return this.db.remove(doc);
 }
 
 

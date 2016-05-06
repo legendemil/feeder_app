@@ -15,17 +15,18 @@ import AnimalStore from '../../stores/AnimalStore.js';
 export default class Karmienie extends React.Component {
 	constructor(){
 		super();
+		this.getAnimals = this.getAnimals.bind(this);
 		this.state = {
 			animals: this.getAnimals()
 		}
 	}
 
 	componentDidMount(){
-		AnimalStore.on("change", this.getAnimals.bind(this));
+		AnimalStore.on("change", this.getAnimals);
 	}
 
-	componentWillUnMount(){
-		AnimalStore.removeListener("change", this.getAnimals.bind(this));
+	componentWillUnmount(){
+		AnimalStore.removeListener("change", this.getAnimals);
 	}
 	
 	// get Animals from AnimalsStore

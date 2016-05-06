@@ -25,8 +25,11 @@ class AnimalStore extends EventEmitter {
 	}
 
 	// delete aniaml from db
-	deleteAnimal(){
-
+	deleteAnimal(doc){
+		let _this = this;
+		AnimalsDB.deleteAnimal(doc).then(function (res) {
+			_this.emit('change');
+		});
 	}
 
 	handleActions(action) {
@@ -38,7 +41,7 @@ class AnimalStore extends EventEmitter {
 				break;
 
 			case 'DELETE_ANIMAL':
-				this.deleteAnimal(action._id);
+				this.deleteAnimal(action.doc);
 				break;
 		}
 	}

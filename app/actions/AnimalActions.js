@@ -7,9 +7,9 @@ export function createAnimal(animal) {
 	});
 }
 
-export function deleteAnimal(_id) {
+export function deleteAnimal(doc) {
 	dispatcher.dispatch({ 
-		type: "CREATE_ANIMAL", 
-		_id: _id 
+		type: "DELETE_ANIMAL", 
+		doc: doc
 	});
 }
