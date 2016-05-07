@@ -13,9 +13,6 @@ export default class AppContainer extends React.Component {
 	}
 
 	render(){
-		console.log("Przeddd");
-
-		console.log("Po");
 		return (
 			<div className='container-fluid'>
 					<Sidebar />

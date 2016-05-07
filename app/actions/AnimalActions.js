@@ -1,5 +1,7 @@
 import dispatcher from '../dispatcher';
 
+
+// createa a new animal
 export function createAnimal(animal) {
 	dispatcher.dispatch({ 
 		type: "CREATE_ANIMAL", 
@@ -7,6 +9,8 @@ export function createAnimal(animal) {
 	});
 }
 
+
+// delete animal
 export function deleteAnimal(doc) {
 	dispatcher.dispatch({ 
 		type: "DELETE_ANIMAL", 

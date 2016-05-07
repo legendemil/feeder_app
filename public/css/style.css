@@ -4,7 +4,7 @@ body {
 a,
 a:hover {
   text-decoration: none;
-  color: #000;
+  color: #343838;
 }
 .container-fluid {
   padding: 0px !important;
@@ -16,14 +16,17 @@ a:hover {
 }
 #main-area #header {
   text-align: right;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  background: #005f6b;
   padding: 19px;
   color: #fff;
 }
 .main-area-content {
-  padding: 20px;
-  padding-left: 50px;
+  padding: 30px 30px 10px;
   background-color: #fff;
+}
+.main-area-content h1 {
+  line-height: 2em;
+  border-bottom: 1px solid #ecf0f1;
 }
 #home h4 {
   line-height: 2em;
@@ -39,17 +42,13 @@ a:hover {
   background-color: #fff;
   border: none;
   outline: none;
-  box-shadow: 2px 2px 10px -4px #000;
+  box-shadow: 2px 2px 10px -4px #343838;
   padding: 5px;
   float: right;
 }
 .action-btn i {
   margin-left: 5px;
   line-height: 15px;
-}
-#karmienie #karmienie-header {
-  line-height: 2em;
-  border-bottom: 1px solid #ecf0f1;
 }
 #karmienie #animal-list {
   list-style-position: inside;
@@ -62,6 +61,24 @@ a:hover {
 #karmienie #animal-list .animal-list-item:nth-child(even) {
   border-top: 1px solid #ecf0f1;
   border-bottom: 1px solid #ecf0f1;
+}
+#karmienie-list {
+  list-style-type: none;
+  padding: 10px;
+}
+#karmienie-list li {
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 0px 3px 10px -5px #343838;
+}
+#karmienie-list li:nth-child(1) {
+  opacity: 0.3;
+  transition-duration: 0.3s;
+}
+#karmienie-list li:nth-child(1):nth-child(1):hover {
+  opacity: 0.6;
 }
 #add-animal-box {
   padding: 20px;
@@ -81,14 +98,14 @@ a:hover {
 #add-animal-box div input[type="text"] {
   outline: none;
   border: none;
-  box-shadow: 5px 5px 10px -7px #000;
+  box-shadow: 5px 5px 10px -7px #343838;
   font-size: 17px;
   padding: 5px;
   transition-duration: 0.3s;
 }
 #add-animal-box div input[type='submit'] {
   padding: 10px;
-  box-shadow: 2px 2px 15px -8px #000;
+  box-shadow: 2px 2px 15px -8px #343838;
   font-size: 1.3em;
   background-color: #fff;
   border: none;
@@ -98,7 +115,7 @@ a:hover {
   text-align: center;
   color: #fff;
   padding: 0px;
-  box-shadow: 2px 0px 30px -10px #000;
+  box-shadow: 2px 0px 30px -10px #343838;
   z-index: 1000;
 }
 @media screen and (min-width: 757px) {
@@ -110,7 +127,7 @@ a:hover {
   }
 }
 #sidebar #logo {
-  background: linear-gradient(to left, #e0eafc, #cfdef3);
+  background: #005f6b;
   line-height: 100%;
 }
 #sidebar #logo h2 > a {
@@ -131,7 +148,7 @@ a:hover {
   cursor: pointer;
 }
 #sidebar #menu-sidebar > ul li a {
-  color: #89bdd3;
+  color: #008c9e;
   text-decoration: none;
   display: block;
   width: 100%;
@@ -139,6 +156,6 @@ a:hover {
   font-size: 1.2em;
 }
 #sidebar #menu-sidebar > ul li a:hover {
-  background-color: #9ad3de;
+  background-color: #008c9e;
   color: #fff;
 }

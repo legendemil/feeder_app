@@ -15,6 +15,7 @@ let AnimalsDB = {
 	db: animals,
 	addAnimal: addAnimal,
 	getAnimals: getAnimals,
+	getAnimal: getAnimal,
 	editAnimal: editAnimal,
 	deleteAnimal: deleteAnimal
 }
@@ -38,6 +39,12 @@ function getAnimals(){
 		include_docs: true,
 		descending: true
 	});
+}
+
+// get one particular animal by id
+function getAnimal(_id){
+	console.log("db",this.db.get(_id))
+	return this.db.get(_id);
 }
 
 

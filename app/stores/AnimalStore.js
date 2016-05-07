@@ -16,6 +16,12 @@ class AnimalStore extends EventEmitter {
 	getAll(){	
 		return AnimalsDB.getAnimals();
 	}
+
+	// get one animal
+	getAnimal(_id) {
+		console.log('as',AnimalsDB.getAnimal(_id));
+		return AnimalsDB.getAnimal(_id);
+	}
 	
 	// create animal in a db
 	createAnimal(data){

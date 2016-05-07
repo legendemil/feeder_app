@@ -47,7 +47,7 @@ export default class Karmienie extends React.Component {
 		return (
 			<div className='col-md-12 main-area-content' id='karmienie'>
 				<HeaderKarmienie/>
-				<AnimalList animals={this.state.animals || []}/>
+				<AnimalList animals={this.state.animals || []} />
 			</div>
 		);
 	}

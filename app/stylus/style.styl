@@ -1,7 +1,11 @@
 // colors
-dark-blue = #89bdd3
+lighter-blue= #D8E6E7
+light-blue = #008c9e
 light = #ECF0F1
-blue = #9ad3de
+
+blue = #005f6b
+black = #343838
+
 
 
 body
@@ -28,15 +32,16 @@ a, a:hover
 	right 0px
 	#header
 		text-align right
-		background linear-gradient(to right, #E0EAFC , #CFDEF3)
+		background blue
 		padding 19px
 		color #fff
 		
 .main-area-content
-	padding 20px
-	padding-left 50px
+	padding 30px 30px 10px
 	background-color #fff
-	
+	h1
+		line-height 2em
+		border-bottom 1px solid light
 
 
 // home page 
@@ -67,9 +72,6 @@ a, a:hover
 
 // karmienie page
 #karmienie
-	#karmienie-header
-		line-height 2em
-		border-bottom 1px solid light
 	#animal-list
 		list-style-position inside
 		.animal-list-item
@@ -79,7 +81,21 @@ a, a:hover
 			&:nth-child(even)
 				border-top 1px solid light
 				border-bottom 1px solid light
-
+	
+#karmienie-list
+	list-style-type none
+	padding 10px 
+	li 			
+		font-size 18px 
+		letter-spacing 1px
+		padding 10px
+		margin 5px
+		box-shadow 0px 3px 10px -5px black
+		&:nth-child(1)
+			opacity 0.3
+			transition-duration .3s
+			&:nth-child(1):hover
+				opacity 0.6
 // add animal
 #add-animal-box
 	padding 20px
@@ -120,7 +136,7 @@ a, a:hover
 		left 0
 		height 100vh
 	#logo
-		background linear-gradient(to left, #E0EAFC , #CFDEF3)
+		background blue
 		line-height 100%
 		h2 > a 
 			display block
@@ -136,12 +152,12 @@ a, a:hover
 			li 
 				cursor pointer
 				a 
-					color dark-blue 
+					color light-blue
 					text-decoration none
 					display block
 					width 100%
 					padding 10px
 					font-size 1.2em
 					&:hover
-						background-color blue
+						background-color #008c9e
 						color #fff
