@@ -1,5 +1,5 @@
 import React from 'react';
-import AddBtn from './addBtn.component';
+import ActionBtn from './actionBtn.component';
 
 export default class HeaderKarmienie extends React.Component {
 	constructor(){
@@ -9,7 +9,7 @@ export default class HeaderKarmienie extends React.Component {
 	render(){
 		return (
 			<h1 id='karmienie-header'>
-			Twoje Zwierzęta <AddBtn title={"Dodaj nowe zwierzę"}/>
+			Twoje Zwierzęta <ActionBtn title={"Dodaj nowe zwierzę"} linkTo={'/animal/add'}/>
 			</h1>
 		);
 	}

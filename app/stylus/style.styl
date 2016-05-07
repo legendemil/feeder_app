@@ -7,6 +7,9 @@ blue = #005f6b
 black = #343838
 
 
+box-shadow()
+	box-shadow 2px 2px 10px -4px black
+
 
 body
 	background-color #fff
@@ -59,7 +62,7 @@ a, a:hover
 	background-color #fff
 	border none
 	outline none
-	box-shadow 2px 2px 10px -4px black
+	box-shadow()
 	padding 5px
 	float right
 	i 
@@ -111,15 +114,15 @@ a, a:hover
 		input[type="text"]
 			outline none
 			border none
-			box-shadow 5px 5px 10px -7px black
+			box-shadow()
 			font-size 17px
 			padding 5px
 			transition-duration .3s
 		input[type='submit']
 			padding 10px
-			box-shadow 2px 2px 15px -8px black
 			font-size 1.3em
 			background-color #fff
+			box-shadow()
 			border none
 			letter-spacing 3px
 

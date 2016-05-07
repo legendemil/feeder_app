@@ -47,7 +47,7 @@ export default class AddAnimalForm extends React.Component {
 					</div>
 					
 					<div>
-						<input type="submit" value="Dodaj" name="submit"/>
+						<input type="submit" value="Dodaj" name="submit"  />
 					</div>
 				</form>
 			</div>

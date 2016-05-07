@@ -28,6 +28,9 @@ import DetailsKarmienie from './components/mainArea/karmienie/detailsKarmienie.c
 // import AddAnimalForm
 import AddAnimalForm from './components/mainArea/animal/addAnimalForm.component';
 
+// import AddKarmienie
+import AddKarmienieForm from './components/mainArea/animal/addKarmienieForm.component';
+
 
 export default class Layout extends React.Component {
 	constructor(){
@@ -53,6 +56,7 @@ ReactDOM.render(
 			
 			<Route path="Karmienie" component={Karmienie} />
 			<Route path="/Karmienie/:animalId" component={DetailsKarmienie}/>
+			<Route path="/Karmienie/:animalId/add" component={AddKarmienieForm}/>
 
 			<Route path='animal/add' component={AddAnimalForm}/>
 

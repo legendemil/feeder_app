@@ -3,6 +3,9 @@ import React from 'react';
 // import AnimalStore
 import AnimalStore from '../../../stores/AnimalStore.js';
 
+// import action-btn
+import ActionBtn from './actionBtn.component';
+
 export default class DetailsKarmienie extends React.Component {
 	constructor(){
 		super();
@@ -35,7 +38,7 @@ export default class DetailsKarmienie extends React.Component {
 			<div id='details-karmienie' className="main-area-content col-md-12">
 				<h1>
 					Historia karmień: {this.state.animal.type}  {this.state.animal.name}
-					<button className="action-btn">Dodaj nowe karmienie</button>
+					<ActionBtn title={"Dodaj nowe karmienie"} linkTo={`/Karmienie/${this.props.params.animalId}/add`} />
 					<button className="action-btn">Ustaw częstotliwość karmień</button>
 				</h1>
 				<ol id="karmienie-list">
