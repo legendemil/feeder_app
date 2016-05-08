@@ -1,14 +1,47 @@
 import React from 'react';
 
-// import AnimalActions
-import * as AnimalActions from '../../../actions/AnimalActions';
+// import FeedingActions
+import * as FeedingActions from '../../../actions/FeedingActions';
 
-// import AnimalStore
-import AnimalStore from '../../../stores/AnimalStore.js';
+// import FeedingStore
+import FeedingStore from '../../../stores/FeedingStore.js';
 
 export default class AddKarmienieForm extends React.Component {
 	constructor(){
 		super();
+		this.succesFeeding = this.succesFeeding.bind(this);
+	}
+
+	componentWillMount(){
+		FeedingStore.on('add_feeding', this.succesFeeding);
+	}
+
+	componentWillUnmount(){
+		FeedingStore.removeListener('add_feeding', this.succesFeeding);
+	}
+
+	succesFeeding(){
+		console.log('ol jeas');
+	}
+
+	// add new feeding to db
+	handleSubmit(ev){
+		ev.preventDefault();
+		let _this = this;
+		let form = ev.target;
+
+
+		// feeding obj to pass to createFeeding
+		let feeding = {
+			_id: new Date().toISOString(),
+			id_animal: _this.props.params.animalId,
+			date: form.date.value,
+			id_user: sessionStorage.getItem('user_id') || 1,
+			food: form.food.value,
+			is_done: form.is_done.value > 0 ? true : false
+		}
+
+		FeedingActions.createFeeding(feeding);
 	}
 
 	
@@ -16,7 +49,7 @@ export default class AddKarmienieForm extends React.Component {
 		return (
 			<div className='col-md-12 main-area-content add-form-box'>
 				<h1>Dodaj nowe karmienie dla Węża</h1>
-				<form>
+				<form onSubmit={this.handleSubmit.bind(this)}>
 					<div>
 						<label htmlFor="date">Data karmienia</label>
 						<input type="date" id='date' name='date' required />
@@ -24,13 +57,13 @@ export default class AddKarmienieForm extends React.Component {
 
 					<div>
 						<label htmlFor="food">Pokarm:</label>
-						<input type="text" id='food' name='food'  required/>
+						<input type="text" id='food' name='food' required/>
 					</div>
 					
 					<div>
 						<label htmlFor="id_done">Czy zjadł:</label>
-						Tak<input type="radio" id='id_done' name='id_done' value="yes" required/>
-						Nie<input type="radio" id='id_done' name='id_done' value="no" required/>
+						Tak<input type="radio" name='is_done' value="1" required/>
+						Nie<input type="radio"  name='is_done' value="0" required/>
 					</div>
 
 					<div>

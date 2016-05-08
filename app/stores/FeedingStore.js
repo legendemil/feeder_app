@@ -1,7 +1,5 @@
 import { EventEmitter } from 'events';
 
-import dispatcher from '../dispatcher';
-
 // import feeding db
 import FeedingDB from '../db/feedings.db.js';
 
@@ -10,18 +8,18 @@ class FeedingStore extends EventEmitter {
 		super();
 	}
 
-
-	handleActions(action) {
-		switch(action.type) {
-			
-		}
+	// create a new feeding in a db
+	createFeeding(feeding) {
+		let _this = this;
+		FeedingDB.createFeeding(feeding).then(function (res) {
+			console.log('succes adding feeding: ', res);
+			_this.emit('add_feeding');
+		});
 	}
 }
 
 
 let feedingStore = new FeedingStore;
 
-
-dispatcher.dispatch(feedingStore.handleActions.bind(this));
 
 export default feedingStore;

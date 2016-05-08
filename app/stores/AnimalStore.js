@@ -5,7 +5,8 @@ import dispatcher from '../dispatcher';
 // import animalDB
 import AnimalsDB from '../db/animals.db.js';
 
-
+// import feedingStore
+import FeedingStore from './FeedingStore';
 
 
 class AnimalStore extends EventEmitter {
@@ -48,6 +49,10 @@ class AnimalStore extends EventEmitter {
 
 			case 'DELETE_ANIMAL':
 				this.deleteAnimal(action.doc);
+				break;
+
+			case 'CREATE_FEEDING':
+				FeedingStore.createFeeding(action.feeding);
 				break;
 		}
 	}
