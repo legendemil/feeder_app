@@ -23,9 +23,7 @@ export default class AddKarmienieForm extends React.Component {
 	
 	succesFeeding(){
 		// go to animal feeding page
-		setTimeout(() => {
-			location.hash = `#/Karmienie/${this.props.params.animalId}`;
-		}, 100);
+		location.hash = `#/Karmienie/${this.props.params.animalId}`;
 	}
 
 	// add new feeding to db

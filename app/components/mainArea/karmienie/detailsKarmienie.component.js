@@ -9,15 +9,21 @@ import FeedingStore from '../../../stores/FeedingStore.js';
 // import action-btn
 import ActionBtn from './actionBtn.component';
 
+// import feedingsListItem
+import FeedingListItem from './feedingList/feedingListItem.component.js';
+
 export default class DetailsKarmienie extends React.Component {
 	constructor(){
 		super();
 		this.getAnimal = this.getAnimal.bind(this);
 		this.state = {
 			animal: {},
-			feedings: []
+			feedings: [],
+			feedingListItems: [],
+			isFeedingsEmpty: true
 		};
 		this.getFeedings = this.getFeedings.bind(this);
+		this.createFeedingListItems = this.createFeedingListItems.bind(this);
 	}
 
 	componentDidMount(){
@@ -51,10 +57,39 @@ export default class DetailsKarmienie extends React.Component {
 			feedings: FeedingStore.feedings
 		});
 		console.log('State feedings:', this.state.feedings);
+		this.createFeedingListItems();
+	}
+
+	// create feeding list items
+	createFeedingListItems(){
+		const feedingsList = this.state.feedings.map((feeding, id) => {
+			let date = new Date(feeding.date).toLocaleDateString(),
+				is_done = 'Nakarmiony',
+				food = feeding.food,
+				unfeededClass = '';
+			if(!feeding.is_done) {
+				is_done = 'Nienakarmiony';
+				unfeededClass = 'unfeeded';
+			}
+			return <FeedingListItem date={date} 
+									food={food} 
+									is_done={is_done} 
+									unfeededClass={unfeededClass}
+									key={id}/>
+		});
+
+		this.setState({
+			feedingListItems: feedingsList
+		});
+
+		if(feedingsList.length)
+			this.setState({
+				isFeedingsEmpty: false
+			});
 	}
 
 	render(){
-	
+
 		return (
 			<div id='details-karmienie' className="main-area-content col-md-12">
 				<h1>
@@ -64,16 +99,9 @@ export default class DetailsKarmienie extends React.Component {
 				</h1>
 				<ol id="karmienie-list">
 					<li>Następne karmienie: Nowa data karmienia generowana automatycznie</li>
-					<li>12 luty 2016 - 2 x jeżynka - tak 
-						<button className="action-btn">Edytuj<i className="fa fa-pencil" aria-hidden="true"></i></button>
-					</li>
-					<li>26 styczeń 2016 - 2 x jeżynka - nie
-						<button className="action-btn">Edytuj<i className="fa fa-pencil" aria-hidden="true"></i></button>
-					</li>
-					<li>12 styczeń 2016 - jeżynka - tak
-						<button className="action-btn">Edytuj<i className="fa fa-pencil" aria-hidden="true"></i></button>
-					</li>
+					{ this.state.feedingListItems}
 				</ol>
+				{this.state.isFeedingsEmpty ? 'Twoje zwierzę jest głodne. Nakarm je!' : '' }
 			</div>
 		);
 	}

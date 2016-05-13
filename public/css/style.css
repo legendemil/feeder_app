@@ -17,7 +17,7 @@ a:hover {
 #main-area #header {
   text-align: right;
   background: #62dc96;
-  padding: 19px;
+  height: 50px;
   color: #fff;
 }
 .main-area-content {
@@ -84,6 +84,9 @@ a:hover {
 #karmienie-list li:nth-child(1):nth-child(1):hover {
   opacity: 0.6;
 }
+#karmienie-list li.unfeeded {
+  background: linear-gradient(rgba(255,37,53,0.1), rgba(255,37,53,0.2));
+}
 .add-form-box {
   padding: 20px;
 }
@@ -138,7 +141,7 @@ a:hover {
 }
 #sidebar #logo {
   background: #62dc96;
-  line-height: 100%;
+  height: 50px;
 }
 #sidebar #logo h2 > a {
   display: block;
