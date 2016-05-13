@@ -3,6 +3,9 @@ import React from 'react';
 // import AnimalStore
 import AnimalStore from '../../../stores/AnimalStore.js';
 
+// import FeedingStore
+import FeedingStore from '../../../stores/FeedingStore.js';
+
 // import action-btn
 import ActionBtn from './actionBtn.component';
 
@@ -11,12 +14,23 @@ export default class DetailsKarmienie extends React.Component {
 		super();
 		this.getAnimal = this.getAnimal.bind(this);
 		this.state = {
-			animal: {}
+			animal: {},
+			feedings: []
 		};
+		this.getFeedings = this.getFeedings.bind(this);
 	}
 
 	componentDidMount(){
 		this.getAnimal(this.props.params.animalId);
+	}
+
+	componentWillMount(){
+		FeedingStore.on('fetch_feedings', this.getFeedings);
+		FeedingStore.getFeedings(this.props.params.animalId);
+	}
+
+	componentWillUnmount(){
+		FeedingStore.removeListener('fetch_feedings', this.getFeedings);
 	}
 	
 	// get single animal
@@ -29,7 +43,14 @@ export default class DetailsKarmienie extends React.Component {
 			});
 			console.log(_this.state.animal);
 		});
+	}
 
+	// get lsit of feeding
+	getFeedings(){
+		this.setState({
+			feedings: FeedingStore.feedings
+		});
+		console.log('State feedings:', this.state.feedings);
 	}
 
 	render(){

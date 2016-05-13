@@ -36,6 +36,7 @@ export default class Layout extends React.Component {
 	constructor(){
 		super();
 		sessionStorage.setItem('user_id', 1);
+		
 	}
 
 	render(){

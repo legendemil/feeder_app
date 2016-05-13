@@ -9,7 +9,7 @@ import FeedingStore from '../../../stores/FeedingStore.js';
 export default class AddKarmienieForm extends React.Component {
 	constructor(){
 		super();
-		this.succesFeeding = this.succesFeeding.bind(this);
+		this.succesFeeding = this.succesFeeding.bind(this);	
 	}
 
 	componentWillMount(){
@@ -20,8 +20,12 @@ export default class AddKarmienieForm extends React.Component {
 		FeedingStore.removeListener('add_feeding', this.succesFeeding);
 	}
 
+	
 	succesFeeding(){
-		console.log('ol jeas');
+		// go to animal feeding page
+		setTimeout(() => {
+			location.hash = `#/Karmienie/${this.props.params.animalId}`;
+		}, 100);
 	}
 
 	// add new feeding to db
@@ -46,6 +50,7 @@ export default class AddKarmienieForm extends React.Component {
 
 	
 	render(){
+
 		return (
 			<div className='col-md-12 main-area-content add-form-box'>
 				<h1>Dodaj nowe karmienie dla Węża</h1>
