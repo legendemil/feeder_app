@@ -31,12 +31,10 @@ import AddAnimalForm from './components/mainArea/animal/addAnimalForm.component'
 // import AddKarmienie
 import AddKarmienieForm from './components/mainArea/animal/addKarmienieForm.component';
 
-
 export default class Layout extends React.Component {
 	constructor(){
 		super();
-		sessionStorage.setItem('user_id', 1);
-		
+		sessionStorage.setItem('user_id', 1);		
 	}
 
 	render(){

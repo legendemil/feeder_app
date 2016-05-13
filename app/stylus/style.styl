@@ -3,11 +3,8 @@ lighter-green= #c3f2d7
 light-green = #47d583
 light = #ECF0F1
 
-green = #62dc96
+brown = #6E3C1B
 black = #020a06
-
-red = #ff2535
-
 
 box-shadow()
 	box-shadow 2px 2px 10px -4px black
@@ -36,10 +33,10 @@ a, a:hover
 	right 0px
 	#header
 		text-align right
-		background green
-		height 50px
+		background brown
 		color #fff
-		
+		line-height 2em
+		padding 16px
 .main-area-content
 	padding 30px 30px 10px
 	background-color #fff
@@ -103,7 +100,7 @@ a, a:hover
 			&:nth-child(1):hover
 				opacity 0.6
 	li.unfeeded
-		background linear-gradient(rgba(red, 0.1), rgba(red, 0.2))
+		background linear-gradient(rgba(brown, 0.1), rgba(brown, 0.2))
 // add animal
 .add-form-box
 	padding 20px
@@ -149,8 +146,8 @@ a, a:hover
 		left 0
 		height 100vh
 	#logo
-		background green
-		height 50px
+		background brown
+		line-height 100%
 		h2 > a 
 			display block
 			text-decoration none
@@ -171,5 +168,5 @@ a, a:hover
 					padding 10px
 					font-size 1.2em
 					&:hover
-						background-color green
+						background-color brown
 						color #fff

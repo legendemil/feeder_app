@@ -16,9 +16,10 @@ a:hover {
 }
 #main-area #header {
   text-align: right;
-  background: #62dc96;
-  height: 50px;
+  background: #6e3c1b;
   color: #fff;
+  line-height: 2em;
+  padding: 16px;
 }
 .main-area-content {
   padding: 30px 30px 10px;
@@ -85,7 +86,7 @@ a:hover {
   opacity: 0.6;
 }
 #karmienie-list li.unfeeded {
-  background: linear-gradient(rgba(255,37,53,0.1), rgba(255,37,53,0.2));
+  background: linear-gradient(rgba(110,60,27,0.1), rgba(110,60,27,0.2));
 }
 .add-form-box {
   padding: 20px;
@@ -140,8 +141,8 @@ a:hover {
   }
 }
 #sidebar #logo {
-  background: #62dc96;
-  height: 50px;
+  background: #6e3c1b;
+  line-height: 100%;
 }
 #sidebar #logo h2 > a {
   display: block;
@@ -168,6 +169,6 @@ a:hover {
   font-size: 1.2em;
 }
 #sidebar #menu-sidebar > ul li a:hover {
-  background-color: #62dc96;
+  background-color: #6e3c1b;
   color: #fff;
 }

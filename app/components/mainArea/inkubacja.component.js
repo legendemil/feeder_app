@@ -1,5 +1,7 @@
 import React from 'react';
 
+// import temp site
+import TempSite from '../tempSite.component';
 
 export default class Inkubacja extends React.Component {
 	constructor(){
@@ -9,7 +11,7 @@ export default class Inkubacja extends React.Component {
 	render(){
 		return (
 			<div className='col-md-12 main-area-content' id='inkubacja'>
-				Inkubacja
+				<TempSite name={"Inkubacja"}/>
 			</div>
 		);
 	}
