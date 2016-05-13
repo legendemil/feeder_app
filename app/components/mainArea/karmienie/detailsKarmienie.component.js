@@ -63,15 +63,21 @@ export default class DetailsKarmienie extends React.Component {
 	// create feeding list items
 	createFeedingListItems(){
 		const feedingsList = this.state.feedings.map((feeding, id) => {
+			
 			let date = new Date(feeding.date).toLocaleDateString(),
 				is_done = 'Nakarmiony',
 				food = feeding.food,
-				unfeededClass = '';
+				unfeededClass = '',
+				feedingId = feeding._id,
+				feedingRev = feeding._rev;
+
 			if(!feeding.is_done) {
 				is_done = 'Nienakarmiony';
 				unfeededClass = 'unfeeded';
 			}
-			return <FeedingListItem date={date} 
+			return <FeedingListItem feedingId={feedingId}
+									feedingRev={feedingRev}
+									date={date} 
 									food={food} 
 									is_done={is_done} 
 									unfeededClass={unfeededClass}

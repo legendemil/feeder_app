@@ -75,7 +75,7 @@ a:hover {
   font-size: 18px;
   letter-spacing: 1px;
   padding: 10px;
-  margin: 5px;
+  margin: 10px;
   box-shadow: 2px 2px 10px -4px #020a06;
 }
 #karmienie-list li:nth-child(1) {
@@ -86,7 +86,7 @@ a:hover {
   opacity: 0.6;
 }
 #karmienie-list li.unfeeded {
-  background: linear-gradient(rgba(110,60,27,0.1), rgba(110,60,27,0.2));
+  background: linear-gradient(rgba(110,60,27,0), rgba(110,60,27,0.1));
 }
 .add-form-box {
   padding: 20px;

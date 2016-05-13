@@ -14,6 +14,7 @@ export default class AddKarmienieForm extends React.Component {
 
 	componentWillMount(){
 		FeedingStore.on('add_feeding', this.succesFeeding);
+		console.log('rev feeding', this.props.params.feedingRev);
 	}
 
 	componentWillUnmount(){
@@ -48,7 +49,7 @@ export default class AddKarmienieForm extends React.Component {
 
 	
 	render(){
-
+		console.log(this.props.location.query.type);
 		return (
 			<div className='col-md-12 main-area-content add-form-box'>
 				<h1>Dodaj nowe karmienie dla Węża</h1>

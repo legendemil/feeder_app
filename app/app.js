@@ -56,6 +56,7 @@ ReactDOM.render(
 			<Route path="Karmienie" component={Karmienie} />
 			<Route path="/Karmienie/:animalId" component={DetailsKarmienie}/>
 			<Route path="/Karmienie/:animalId/add" component={AddKarmienieForm}/>
+			<Route path="/Karmienie/:feedingRev/do" component={AddKarmienieForm}/>
 
 			<Route path='animal/add' component={AddAnimalForm}/>
 
