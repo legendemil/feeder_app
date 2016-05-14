@@ -28,7 +28,7 @@ export default class AnimalListItem extends React.Component {
 		return (
 			<li className='animal-list-item'>
 				<Link to={`/Karmienie/${this.props.animal._id}`}>{this.props.animal.type} - {this.props.animal.name}</Link>
-				<DeleteBtn deleteAnimal={this.deleteAnimal.bind(this)}/>
+				<DeleteBtn onClick={this.deleteAnimal.bind(this)}/>
 			</li>
 		);
 	}

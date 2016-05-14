@@ -54,6 +54,10 @@ class AnimalStore extends EventEmitter {
 			case 'CREATE_FEEDING':
 				FeedingStore.createFeeding(action.feeding);
 				break;
+
+			case 'DELETE_FEEDING':
+				FeedingStore.deleteFeeding(action.feeding);
+				break;
 		}
 	}
 }

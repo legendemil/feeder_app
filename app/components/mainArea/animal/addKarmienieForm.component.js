@@ -7,12 +7,16 @@ import * as FeedingActions from '../../../actions/FeedingActions';
 // import FeedingStore
 import FeedingStore from '../../../stores/FeedingStore.js';
 
+// import action btn
+import DeleteBtn from '../karmienie/animalList/deleteBtn.component';
+
 export default class AddKarmienieForm extends React.Component {
 	constructor(){
 		super();
 		this.state = {
 			headerForm: 'Dodaj nowe karmienie',
 		}
+		this.feeding = {};
 		this.succesFeeding = this.succesFeeding.bind(this);	
 		this.formatDate = this.formatDate.bind(this);	
 		this.updateInputs = this.updateInputs.bind(this);	
@@ -26,8 +30,9 @@ export default class AddKarmienieForm extends React.Component {
 			
 			// fetch current feeding and update input fields
 			FeedingStore.getFeedingByRev(this.props.params.feedingRev).then(function(res) {
-				let feeding = res.docs[0];
-				_this.updateInputs(feeding);
+				_this.feeding = res.docs[0];
+				_this.updateInputs(_this.feeding);
+				console.log(_this.feeding);
 			});
 
 			this.setState({
@@ -36,19 +41,19 @@ export default class AddKarmienieForm extends React.Component {
 		}
 		
 		// listening for succesful adding feeding
-		FeedingStore.on('add_feeding', this.succesFeeding);
+		FeedingStore.on('change_feeding', this.succesFeeding);
 		console.log('rev feeding', this.props.params.feedingRev);
 	}
 
 
 	componentWillUnmount(){
-		FeedingStore.removeListener('add_feeding', this.succesFeeding);
+		FeedingStore.removeListener('change_feeding', this.succesFeeding);
 	}
 
 	
 	succesFeeding(){
 		// go to animal feeding page
-		location.hash = `#/Karmienie/${this.props.params.animalId}`;
+		history.go(-1);
 	}
 
 	// format date
@@ -72,17 +77,23 @@ export default class AddKarmienieForm extends React.Component {
 		let _this = this;
 		let form = ev.target;
 
-
-		// feeding obj to pass to createFeeding
 		let feeding = {
-			_id: new Date().toISOString(),
-			id_animal: _this.props.params.animalId,
 			date: form.date.value,
 			id_user: sessionStorage.getItem('user_id') || 1,
 			food: form.food.value,
 			is_done: form.is_done.value > 0 ? true : false
 		}
 
+		// if type is edit then edit, ele create a new feeding
+		if(this.props.location.query.type === 'edit') {
+			feeding._id = _this.feeding._id;
+			feeding._rev = _this.feeding._rev;
+			feeding.id_animal = _this.feeding.id_animal;
+			console.log('updateing wfeeding', feeding);
+		} else {
+			feeding._id = new Date().toISOString();
+			feeding.id_animal = _this.props.params.animalId;
+		}
 		FeedingActions.createFeeding(feeding);
 	}
 
@@ -92,14 +103,30 @@ export default class AddKarmienieForm extends React.Component {
 		
 		form.date.value = _this.formatDate(feeding.date);
 		form.food.value =  feeding.food;
+		
+		if(feeding.is_done)
+			form.is_done[0].checked = true;
+		else
+			form.is_done[1].checked = true;
+	}	
+	
+	// delete feeding
+	deleteFeeding(){
+		let is_delete = confirm('Czy na pewno chcesz usunąć?');
+		if(is_delete)
+			FeedingActions.deleteFeeding(this.feeding);
 	}
-
 	
 	render(){
-		console.log(this.props.location.query.type);
+		console.log(this.props.location.query.type );
+		const deleteBtn = this.props.location.query.type === 'edit' 
+						? <DeleteBtn onClick={this.deleteFeeding.bind(this)}/>  : '';
 		return (
 			<div className='col-md-12 main-area-content add-form-box'>
-				<h1>{ this.state.headerForm }</h1>
+				<h1>	
+					{ this.state.headerForm }
+					 { deleteBtn }
+				</h1>
 				<form onSubmit={this.handleSubmit.bind(this)} ref='feeding-form'>
 					<div>
 						<label htmlFor="date">Data karmienia</label>

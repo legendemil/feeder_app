@@ -15,14 +15,16 @@ let FeedingsDB = {
 	db: feedings,
 	getFeedings: getFeedings,
 	getFeedingByRev: getFeedingByRev,
-	createFeeding: createFeeding
+	createFeeding: createFeeding,
+	deleteFeeding: deleteFeeding
 }
 
-// create a new feeding
+// create or updating a new feeding
 function createFeeding(feeding) {
 	
 	return this.db.put(feeding);
 }
+
 
 // get feedings
 function getFeedings(animal_id) {
@@ -46,6 +48,11 @@ function getFeedingByRev(rev) {
 			selector: { _rev: {$eq: rev}}
 		});
 	});
+}
+
+// delete feeding
+function deleteFeeding(feeding) {
+	return this.db.remove(feeding);
 }
 
 

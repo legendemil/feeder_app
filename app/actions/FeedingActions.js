@@ -6,3 +6,11 @@ export function createFeeding(feeding) {
 		feeding: feeding
 	});
 }
+
+export function deleteFeeding(feeding) {
+	dispatcher.dispatch({
+		type: 'DELETE_FEEDING',
+		feeding: feeding
+	});
+}
+

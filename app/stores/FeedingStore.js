@@ -18,7 +18,15 @@ class FeedingStore extends EventEmitter {
 
 		FeedingDB.createFeeding(feeding).then(function (res) {
 			console.log('succes adding feeding: ', res);
-			_this.emit('add_feeding');
+			_this.emit('change_feeding');
+		});
+	}
+
+	// delete feeding
+	deleteFeeding(feeding){
+		let _this = this;
+		FeedingDB.deleteFeeding(feeding).then(function () {
+			_this.emit('change_feeding');
 		});
 	}
 
