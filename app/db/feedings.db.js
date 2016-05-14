@@ -14,6 +14,7 @@ let feedings = new PouchDB('feedingsDB');
 let FeedingsDB = {
 	db: feedings,
 	getFeedings: getFeedings,
+	getFeedingByRev: getFeedingByRev,
 	createFeeding: createFeeding
 }
 
@@ -32,6 +33,18 @@ function getFeedings(animal_id) {
 		return _this.db.find({
 			selector: { id_animal: { $eq: animal_id} }
 		})
+	});
+}
+
+// get feeding by rev
+function getFeedingByRev(rev) {
+	let _this = this;
+	return this.db.createIndex({
+		index: { fields: ['_rev'] } 
+	}).then(function () {
+		return _this.db.find({
+			selector: { _rev: {$eq: rev}}
+		});
 	});
 }
 

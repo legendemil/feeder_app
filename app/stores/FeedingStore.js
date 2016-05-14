@@ -32,6 +32,12 @@ class FeedingStore extends EventEmitter {
 			console.log('Error fetching feedings: ', err);
 		});
 	}
+
+	// get feeding b y rev
+	getFeedingByRev(rev){
+		let _this = this;
+		return FeedingDB.getFeedingByRev(rev);
+	}
 }
 
 
