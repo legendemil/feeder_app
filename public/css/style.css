@@ -1,21 +1,33 @@
+body {
+  background-color: #fff;
+}
 a,
 a:hover {
   text-decoration: none;
-  color: #000;
+  color: #020a06;
 }
 .container-fluid {
   padding: 0px !important;
 }
+#main-area {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
 #main-area #header {
   text-align: right;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-  padding: 19px;
+  background: #6e3c1b;
   color: #fff;
+  line-height: 2em;
+  padding: 16px;
 }
 .main-area-content {
-  padding: 20px;
-  padding-left: 50px;
+  padding: 30px 30px 10px;
   background-color: #fff;
+}
+.main-area-content h1 {
+  line-height: 2em;
+  border-bottom: 1px solid #ecf0f1;
 }
 #home h4 {
   line-height: 2em;
@@ -25,31 +37,111 @@ a:hover {
   height: 150px;
   margin: 10px;
 }
-#karmienie #karmienie-header {
-  line-height: 2em;
-  border-bottom: 1px solid #000;
+.action-btn {
+  font-size: 10px;
+  line-height: 15px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 10px -4px #020a06;
+  padding: 5px;
+  float: right;
+}
+.action-btn i {
+  margin-left: 5px;
+  line-height: 15px;
+}
+.action-btn a {
+  display: block;
+  width: 100%;
 }
 #karmienie #animal-list {
   list-style-position: inside;
 }
 #karmienie #animal-list .animal-list-item {
+  margin: 5px;
   padding: 5px;
   font-size: 20px;
 }
+#karmienie #animal-list .animal-list-item:nth-child(even) {
+  border-top: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+}
+#karmienie-list {
+  list-style-type: none;
+  padding: 10px;
+}
+#karmienie-list li {
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 10px -4px #020a06;
+}
+#karmienie-list li:nth-child(1) {
+  opacity: 0.3;
+  transition-duration: 0.3s;
+}
+#karmienie-list li:nth-child(1):nth-child(1):hover {
+  opacity: 0.6;
+}
+#karmienie-list li.unfeeded {
+  background: linear-gradient(rgba(110,60,27,0), rgba(110,60,27,0.1));
+}
+.add-form-box {
+  padding: 20px;
+}
+.add-form-box h1 {
+  line-height: 2em;
+  border-bottom: 1px solid #ecf0f1;
+}
+.add-form-box div {
+  padding: 10px;
+  margin-top: 10px;
+}
+.add-form-box div label {
+  font-size: 17px;
+  width: 150px;
+}
+.add-form-box div input {
+  outline: none;
+  border: none;
+  box-shadow: 2px 2px 10px -4px #020a06;
+  font-size: 17px;
+  padding: 5px;
+  transition-duration: 0.3s;
+}
+.add-form-box div input[type='text'],
+.add-form-box div input[type='date'] {
+  width: 200px;
+}
+.add-form-box div input[type='submit'] {
+  padding: 10px;
+  font-size: 1.3em;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px -4px #020a06;
+  border: none;
+  letter-spacing: 3px;
+}
 #sidebar {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url("../../public/img/home/image10.png");
+  background-size: cover;
   text-align: center;
   color: #fff;
   padding: 0px;
-  box-shadow: 2px 0px 30px -10px #000;
+  box-shadow: 2px 2px 10px -4px #020a06;
   z-index: 1000;
 }
 @media screen and (min-width: 757px) {
   #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
   }
 }
 #sidebar #logo {
-  background: linear-gradient(to left, #e0eafc, #cfdef3);
+  background: #6e3c1b;
   line-height: 100%;
 }
 #sidebar #logo h2 > a {
@@ -59,7 +151,6 @@ a:hover {
   cursor: pointer;
 }
 #sidebar #menu-sidebar {
-  background-color: #fff;
   padding: 0px;
 }
 #sidebar #menu-sidebar > ul {
@@ -70,7 +161,7 @@ a:hover {
   cursor: pointer;
 }
 #sidebar #menu-sidebar > ul li a {
-  color: #89bdd3;
+  color: #fff;
   text-decoration: none;
   display: block;
   width: 100%;
@@ -78,6 +169,6 @@ a:hover {
   font-size: 1.2em;
 }
 #sidebar #menu-sidebar > ul li a:hover {
-  background-color: #9ad3de;
+  background-color: #6e3c1b;
   color: #fff;
 }

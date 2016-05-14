@@ -19,11 +19,13 @@
     "classnames": "^2.2.3",
     "electron-prebuilt": "^0.36.0",
     "electron-reload": "^0.2.0",
+    "flux": "^2.1.1",
     "jquery": "^2.2.3",
     "react": "^0.14.8",
     "react-autocomplete": "^1.0.0-rc2",
     "react-dom": "^0.14.7",
     "react-router": "^2.4.0",
+    "reflux": "^0.4.1",
     "stylus": "^0.54.5",
     "watchify": "^3.7.0"
   }

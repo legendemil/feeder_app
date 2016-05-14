@@ -1,7 +1,17 @@
 // colors
-dark-blue = #89bdd3
-light = #e3e3e3
-blue = #9ad3de
+lighter-green= #c3f2d7
+light-green = #47d583
+light = #ECF0F1
+
+brown = #6E3C1B
+black = #020a06
+
+box-shadow()
+	box-shadow 2px 2px 10px -4px black
+
+
+body
+	background-color #fff
 
 
 a, a:hover
@@ -13,19 +23,29 @@ a, a:hover
 	padding 0px !important
 
 
+
+
+
+// main area
 #main-area
+	position absolute
+	top 0px
+	right 0px
 	#header
 		text-align right
-		background linear-gradient(to right, #E0EAFC , #CFDEF3)
-		padding 19px
+		background brown
 		color #fff
-		
-
+		line-height 2em
+		padding 16px
 .main-area-content
-	padding 20px
-	padding-left 50px
+	padding 30px 30px 10px
 	background-color #fff
-	
+	h1
+		line-height 2em
+		border-bottom 1px solid light
+
+
+// home page 
 #home
 	h4
 		line-height 2em
@@ -33,29 +53,100 @@ a, a:hover
 		width 150px
 		height 150px
 		margin 10px
+
+.action-btn
+	font-size 10px 
+	line-height 15px
+	background-color #fff
+	border none
+	outline none
+	box-shadow()
+	padding 5px
+	float right
+	i 
+		margin-left 5px
+		line-height @line-height
+	a 
+		display block 
+		width 100%
 		
 
+
+
+// karmienie page
 #karmienie
-	#karmienie-header
-		line-height 2em
-		border-bottom 1px solid black
 	#animal-list
 		list-style-position inside
 		.animal-list-item
+			margin 5px
 			padding 5px
 			font-size 20px
+			&:nth-child(even)
+				border-top 1px solid light
+				border-bottom 1px solid light
 	
+#karmienie-list
+	list-style-type none
+	padding 10px 
+	li 			
+		font-size 18px 
+		letter-spacing 1px
+		padding 10px
+		margin 10px
+		box-shadow 0px 3px 10px -5px black
+		&:nth-child(1)
+			opacity 0.3
+			transition-duration .3s
+			&:nth-child(1):hover
+				opacity 0.6
+	li.unfeeded
+		background linear-gradient(rgba(brown, 0.0), rgba(brown, 0.1))
+// add animal
+.add-form-box
+	padding 20px
+	h1
+		line-height 2em
+		border-bottom 1px solid light 
+	div
+		padding 10px
+		margin-top 10px
+		label
+			font-size 17px
+			width 150px
+		input
+			outline none
+			border none
+			box-shadow()
+			font-size 17px
+			padding 5px
+			transition-duration .3s
+		input[type='text']
+		input[type='date']
+			width 200px
+		input[type='submit']
+			padding 10px
+			font-size 1.3em
+			background-color #fff
+			box-shadow()
+			border none
+			letter-spacing 3px
 
+// sidebar
 #sidebar
+	background-image linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)),url('../../public/img/home/image10.png')
+	background-size cover
 	text-align center
 	color #fff
-	padding 0px
+	padding 0px 
 	box-shadow 2px 0px 30px -10px  black
 	z-index 1000
 	@media screen and (min-width: 757px)
+		position fixed
+		top 0 
+		left 0
 		height 100vh
 	#logo
-		background linear-gradient(to left, #E0EAFC , #CFDEF3)
+		background brown
 		line-height 100%
 		h2 > a 
 			display block
@@ -63,7 +154,6 @@ a, a:hover
 			color #fff
 			cursor pointer
 	#menu-sidebar
-		background-color #fff
 		padding 0px
 		> ul
 			list-style-type none
@@ -71,12 +161,12 @@ a, a:hover
 			li 
 				cursor pointer
 				a 
-					color dark-blue 
+					color #fff
 					text-decoration none
 					display block
 					width 100%
 					padding 10px
 					font-size 1.2em
 					&:hover
-						background-color blue
+						background-color brown
 						color #fff
