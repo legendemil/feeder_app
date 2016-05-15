@@ -30,12 +30,14 @@ function createFeeding(feeding) {
 function getFeedings(animal_id) {
 	let _this = this;
 	return _this.db.createIndex({
-		index: { fields: ['id_animal'] }
-	}).then(function() {
+		index: { fields: ['id_animal', 'date'] }
+	}).then(function(res) {
 		return _this.db.find({
 			selector: { 
-				id_animal: { $eq: animal_id}
-			}
+				id_animal: { $eq: animal_id},
+				date: { $gt: null }
+			},
+			sort: [{ date: 'desc'}]
 		})
 	});
 }
