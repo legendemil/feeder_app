@@ -63,7 +63,6 @@ export default class DetailsKarmienie extends React.Component {
 	// create feeding list items
 	createFeedingListItems(){
 		const feedingsList = this.state.feedings.map((feeding, id) => {
-			
 			let date = new Date(feeding.date).toLocaleDateString(),
 				is_done = 'Nakarmiony',
 				food = feeding.food,
@@ -81,7 +80,8 @@ export default class DetailsKarmienie extends React.Component {
 									food={food} 
 									is_done={is_done} 
 									unfeededClass={unfeededClass}
-									key={id}/>
+									key={id}
+									lp={id + 1}/>
 		});
 
 		this.setState({
@@ -103,10 +103,21 @@ export default class DetailsKarmienie extends React.Component {
 					<ActionBtn title={"Dodaj nowe karmienie"} linkTo={`/Karmienie/${this.props.params.animalId}/add`} />
 					<button className="action-btn">Ustaw częstotliwość karmień</button>
 				</h1>
-				<ol id="karmienie-list">
-					<li>Następne karmienie: Nowa data karmienia generowana automatycznie</li>
-					{ this.state.feedingListItems}
-				</ol>
+				
+				<table id='karmienie-list'>
+					<thead>
+						<tr>
+							<th>Lp.</th>
+							<th>Data</th>
+							<th>Pożywienie</th>
+							<th>Czy zjadł?</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{ this.state.feedingListItems}
+					</tbody>
+				</table>
 				{this.state.isFeedingsEmpty ? 'Twoje zwierzę jest głodne. Nakarm je!' : '' }
 			</div>
 		);

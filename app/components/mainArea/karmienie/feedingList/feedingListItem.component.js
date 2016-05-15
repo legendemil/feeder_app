@@ -12,9 +12,15 @@ export default class FeedingListItem extends React.Component {
 		console.log('feeding rev', this.props.feedingRev);
 		
 		return(
-			<li className={"animate-show " + this.props.unfeededClass}>{this.props.date + ' - ' + this.props.food + ' - ' + this.props.is_done}
-				<ActionBtn linkTo={`/Karmienie/${this.props.feedingRev}/do?type=edit`} title='Edytuj' fontType="fa-pencil"/>
-			</li>
+			<tr className={"animate-show " + this.props.unfeededClass}>
+				<td>{this.props.lp}</td>
+				<td>{this.props.date}</td>
+				<td>{this.props.food}</td>
+				<td>{this.props.is_done}</td>
+				<td>
+					<ActionBtn linkTo={`/Karmienie/${this.props.feedingRev}/do?type=edit`} title='Edytuj' fontType="fa-pencil"/>
+				</td>		
+			</tr>
 		);
 	}
 }

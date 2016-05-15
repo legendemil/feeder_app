@@ -87,22 +87,40 @@ a, a:hover
 				border-top 1px solid light
 				border-bottom 1px solid light
 	
+// #karmienie-list
+// 	list-style-type none
+// 	padding 10px 
+// 	li 			
+// 		font-size 18px 
+// 		letter-spacing 1px
+// 		padding 10px
+// 		margin 10px
+// 		box-shadow 0px 3px 10px -5px black
+// 		&:nth-child(1)
+// 			opacity 0.3
+// 			transition-duration .3s
+// 			&:nth-child(1):hover
+// 				opacity 0.6
+// 	li.unfeeded
+// 		background rgba(#D7CCC8, 0.3)
+
 #karmienie-list
-	list-style-type none
-	padding 10px 
-	li 			
-		font-size 18px 
-		letter-spacing 1px
+	width 100%
+	th
+		font-weight 100
+		font-size 25px
 		padding 10px
-		margin 10px
-		box-shadow 0px 3px 10px -5px black
-		&:nth-child(1)
-			opacity 0.3
-			transition-duration .3s
-			&:nth-child(1):hover
-				opacity 0.6
-	li.unfeeded
-		background rgba(#D7CCC8, 0.3)
+		background-color brown
+		color #fff
+		border-bottom 2px solid rgba(black, 0.5)
+	td 
+		font-size 16px 
+		line-height 130%
+		padding 10px
+	tr:nth-child(even)
+		background-color lightness(brown, 50%)
+		color #fff
+
 // add animal
 .add-form-box
 	padding 20px
