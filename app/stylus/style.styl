@@ -1,3 +1,5 @@
+@import './animations.styl'
+
 // colors
 lighter-green= #c3f2d7
 light-green = #47d583
@@ -100,7 +102,7 @@ a, a:hover
 			&:nth-child(1):hover
 				opacity 0.6
 	li.unfeeded
-		background linear-gradient(rgba(brown, 0.0), rgba(brown, 0.1))
+		background rgba(#D7CCC8, 0.3)
 // add animal
 .add-form-box
 	padding 20px
@@ -170,3 +172,8 @@ a, a:hover
 					&:hover
 						background-color brown
 						color #fff
+						
+
+::selection
+	background brown
+	color #fff

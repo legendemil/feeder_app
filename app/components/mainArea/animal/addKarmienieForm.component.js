@@ -128,20 +128,29 @@ export default class AddKarmienieForm extends React.Component {
 					 { deleteBtn }
 				</h1>
 				<form onSubmit={this.handleSubmit.bind(this)} ref='feeding-form'>
-					<div>
-						<label htmlFor="date">Data karmienia</label>
-						<input type="date" id='date' name='date' required/>
+					<div className='row'>
+						<div className='col-md-6'>
+							<label htmlFor="date">Data karmienia</label>
+							<input type="date" id='date' name='date' required/>
+						</div>
+						<span>Kiedy ostani raz go karmiłeś?</span>
 					</div>
 
-					<div>
-						<label htmlFor="food">Pokarm:</label>
-						<input type="text" id='food' name='food' required/>
+					<div className='row'>
+						<div className='col-md-6'>
+							<label htmlFor="food">Pokarm:</label>
+							<input type="text" id='food' name='food' required/>
+						</div>
+						<span>Co twój zwierzak jadł ostatnio?</span>
 					</div>
 					
-					<div>
-						<label htmlFor="id_done">Czy zjadł:</label>
-						Tak<input type="radio" name='is_done' value="1" required/>
-						Nie<input type="radio"  name='is_done' value="0" required/>
+					<div className='row'>
+						<div className='col-md-6'>
+							<label htmlFor="id_done">Czy zjadł:</label>
+							Tak<input type="radio" name='is_done' value="1" required/>
+							Nie<input type="radio"  name='is_done' value="0" required/>
+						</div>
+						<span>Czy twój zwierzak się spisał? </span>
 					</div>
 
 					<div>

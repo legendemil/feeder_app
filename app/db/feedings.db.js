@@ -33,7 +33,9 @@ function getFeedings(animal_id) {
 		index: { fields: ['id_animal'] }
 	}).then(function() {
 		return _this.db.find({
-			selector: { id_animal: { $eq: animal_id} }
+			selector: { 
+				id_animal: { $eq: animal_id}
+			}
 		})
 	});
 }

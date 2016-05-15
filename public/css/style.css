@@ -1,3 +1,44 @@
+.animate-show {
+  animation-name: animate-show;
+  animation-duration: 0.9s;
+  animation-timing-function: easy-out;
+}
+@-moz-keyframes animate-show {
+  0% {
+    transform: translateX(-60%);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateX(5%);
+  }
+}
+@-webkit-keyframes animate-show {
+  0% {
+    transform: translateX(-60%);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateX(5%);
+  }
+}
+@-o-keyframes animate-show {
+  0% {
+    transform: translateX(-60%);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateX(5%);
+  }
+}
+@keyframes animate-show {
+  0% {
+    transform: translateX(-60%);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateX(5%);
+  }
+}
 body {
   background-color: #fff;
 }
@@ -86,7 +127,7 @@ a:hover {
   opacity: 0.6;
 }
 #karmienie-list li.unfeeded {
-  background: linear-gradient(rgba(110,60,27,0), rgba(110,60,27,0.1));
+  background: rgba(215,204,200,0.3);
 }
 .add-form-box {
   padding: 20px;
@@ -170,5 +211,9 @@ a:hover {
 }
 #sidebar #menu-sidebar > ul li a:hover {
   background-color: #6e3c1b;
+  color: #fff;
+}
+::selection {
+  background: #6e3c1b;
   color: #fff;
 }

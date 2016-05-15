@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default class TempSite extends React.Component {
 	constructor(){
 		super();

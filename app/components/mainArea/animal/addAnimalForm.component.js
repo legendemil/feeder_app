@@ -32,18 +32,24 @@ export default class AddAnimalForm extends React.Component {
 
 	render(){
 		return (
-			<div className='col-md-12 add-form-box'>
+			<div className='col-md-12 main-area-content add-form-box'>
 				<h1>Dodaj nowego zwierzaka</h1>
 				<form onSubmit={this.createAnimal.bind(this)}>
 					
-					<div>
-						<label htmlFor="name">Nazwa</label>
-						<input type="text" id="name" name="name" required/>
+					<div className='row'>
+						<div className='col-md-6'>
+							<label htmlFor="name">Nazwa</label>
+							<input type="text" id="name" name="name" required/>
+						</div>
+						<span>Jak nazywa się twój zwierzak?</span>
 					</div>
 					
-					<div>
-						<label htmlFor="type">Typ</label>
-						<input type="text" id="type" name="type" required/>
+					<div className='row'>
+						<div className='col-md-6'>
+							<label htmlFor="type">Typ</label>
+							<input type="text" id="type" name="type" required/>
+						</div>
+						<span>Czy twoje zwierzę to wąż, patyczak, a może legwan?</span>
 					</div>
 					
 					<div>

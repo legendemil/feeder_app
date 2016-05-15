@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 
@@ -41,7 +42,9 @@ export default class Layout extends React.Component {
 		
 		return (
 			<div>
-				<AppContainer />
+				<MuiThemeProvider muiTheme={getMuiTheme()}>
+				 <AppContainer />
+				</MuiThemeProvider>	
 			</div>
 		);
 	}
